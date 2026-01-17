@@ -38,7 +38,7 @@ const STTView: React.FC = () => {
   const recognitionRef = useRef<any>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<number | null>(null);
 
   // Cleanup on unmount
   useEffect(() => {
@@ -157,7 +157,7 @@ const STTView: React.FC = () => {
       recognitionRef.current = recognition;
 
       setIsRecording(true);
-      timerRef.current = setInterval(() => {
+      timerRef.current = window.setInterval(() => {
         setRecordingTime(prev => prev + 1);
       }, 1000);
 
