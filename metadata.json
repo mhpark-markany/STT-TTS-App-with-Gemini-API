@@ -1,0 +1,7 @@
+{
+  "name": "Gemini Voice Studio",
+  "description": "A powerful Speech-to-Text and Text-to-Speech application using Google Gemini models.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
